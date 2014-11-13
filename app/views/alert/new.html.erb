@@ -1,0 +1,80 @@
+
+<center><div class="page-header">
+    <font color="gray" size ="6" face = "Baskerville Old Face">
+ 取消訂單</font>
+<% if user_signed_in? %>
+
+<% else %>
+    
+<%= link_to '註冊', new_user_registration_path, class: "btn btn-large
+   btn-primary" %></font>
+
+<% end %>
+  </div>
+  </center>
+
+<center><a href=""><img src="http://farm3.staticflickr.com/2286/13117851103_12072fbb60_o.png" width="1400" height="800" alt="cancel"></a></center>
+<hr>
+
+
+<div class=" hero-unit">
+ <font size = "5" color= "gray">取消餐點訂單</font>
+<br><br>
+
+<%= form_for @ordernew, :url => alert_path do |form| %>
+  <fieldset class="fields">
+  
+    <div class="field"><%= form.label :name %>
+      <%= form.text_field :name, :placeholder => "大名：同退款銀行帳戶上名稱" %>
+    </div>
+  
+    <div class="field">
+      <%= form.label :email %>
+      <%= form.text_field :email, :placeholder => "Jean@gmail.com..." %>
+    </div>
+
+       <div class="field">
+      <%= form.label :number %>
+      <%= form.text_field :number, :placeholder => "手機聯絡號碼..." %>
+    </div>
+    
+    <div class="field">
+      <%= form.label :bank %>
+     <%= form.text_area :bank, :placeholder => "退款銀行：總行(兆豐國際商業銀行），分行(中山分行）", :class   => "span6", rows: "1", input_html: { :class => "span6", rows: "10"}  %>
+    </div>
+
+     <div class="field">
+      <%= form.label :account %>
+     <%= form.text_area :account, :placeholder => "退款帳號： 與存摺上相同", :class   => "span6", rows: "1", input_html: { :class => "span6", rows: "10"}  %>
+    </div>
+
+     <div class="field">
+      <%= form.label :orderid %>
+     <%= form.text_area :orderid, :placeholder => "訂單編號", :class   => "span2", rows: "1", input_html: { :class => "span6", rows: "10"}  %>
+    </div>
+    
+    <div class="field">
+     <%= form.label :special %> 
+      <%= form.text_area :special, :placeholder => "備註", :class   => "span6", rows: "3", input_html: { :class => "span6", rows: "10"}  %>
+
+  </fieldset>
+  
+  <fieldset class="form-actions">
+    <%= form.submit "取消訂單", class: "btn btn-primary" %>
+  
+  </div>
+
+  </fieldset>
+<% end %>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44036574-1', 'chef29.com');
+  ga('send', 'pageview');
+
+</script>

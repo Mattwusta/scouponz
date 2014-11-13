@@ -1,0 +1,40 @@
+<center>
+ <font color="gray" size ="5" face = "Baskerville Old Face">
+<%= link_to '新增 Pins+', new_pin_path %> |
+<%= link_to '所有會員', usering_path %> |
+<%= link_to "所有訂單", manage_path %> |
+<a href="http://www.chef29.com/categories/new" >新增分類</a>
+
+</center></font>
+<br>
+
+
+
+<br><br>
+    <font size="5" color ="gray" face = "Baskerville Old Face">所有會員</font>
+    <hr>
+     <table class="table table-striped">
+        <thead>
+            <tr>
+               <font size="2" color ="gray" face = "Baskerville Old Face">
+
+                <th>會員 ID</th></font>
+                <th>姓名</th>
+                <th>EMAIL</th>
+                <th>成為會員</th>
+                <th>電話</th>
+                <th>送餐地址</th>
+              
+               
+                
+            </tr>
+        </thead>
+
+    <br>
+    <div id="users">
+        <%= render @users %>
+    </div>
+    
+       
+</table>
+

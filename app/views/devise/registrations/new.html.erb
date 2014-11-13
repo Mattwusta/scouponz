@@ -1,0 +1,45 @@
+<br><br>
+
+<center>
+   <font color="gray" size ="6" face = "Baskerville Old Face">29分鐘讓您成為今晚大廚！</font>
+         
+  </center>
+  <br><br><br><br>
+
+
+<font color="gray" size ="5" face = "Baskerville Old Face">新朋友註冊</font>
+<br><br>
+
+<div class="row-fluid">
+  <div class="span3" >
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+    
+    <%= f.input :image, label: "上傳大頭照,不上傳也可。" %>
+    <%= f.input :name, label: "中文姓名（收餐點人）", :required => true, :autofocus => true %>
+    <%= f.input :email, :required => true, :autofocus => true %>
+    <%= f.input :phone, label: "送餐電話" %>
+    <%= f.input :address, label: "送餐地址" %>
+    <%= f.input :password, :required => true %>
+
+ </div>
+           
+  <div class="span8"  ><center>
+<img src="https://farm6.staticflickr.com/5582/13613877614_e6d2e7367a_b.jpg" width="1102" height="508" alt="fee3"></a></a></center>
+</div>
+
+</div>
+
+ <div class="form-actions">
+    <%= f.button :submit, "註冊" %> 請記得接收EMAIL並完成驗證您EMAIL!
+  </div>
+
+  當您註冊並開始使用本服務代表您已經閱讀了解並同意本服務條款<%= link_to "Service 服務條款",service_path %>
+<% end %>
+<br>
+<%= render "devise/shared/links" %>
+</div>
+</div>
+
+

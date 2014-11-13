@@ -1,0 +1,270 @@
+
+
+
+<center><div class="page-header">
+ <font color="gray" size ="6" face = "Baskerville Old Face">以下為您的訂單</font>
+ </center>
+   
+
+<div class="row">
+  <div class="span10 offset1">
+    <div class="well">
+      <% if current_user == @orderlist.user %>
+                <%= link_to '修改訂單(填寫付款完資料／帳號／金額...）', edit_orderlist_path(@orderlist) %> |
+            <% end %>
+            <%= link_to '上一頁', orderlists_path %><br>
+<%= link_to '運費說明', delivery_path %><br>
+  <br>
+      
+ <font size = "3" color= "red">選轉賬（選貨到付款不用理會）：請在完成匯款/轉賬餐點貨款後回來更新 1. 帳號末5碼 2.匯款金額!! (查看訂單>訂單細節>修改訂單(填寫付款完資料／帳號／金額...)>填入1.帳號末5碼 & 2.金額)</font>
+
+
+ <hr>
+           </font>
+            <p>訂單編號：
+              <%= @orderlist.id %>
+            </p>
+            
+         
+            <p>訂購時間：
+              <%= @orderlist.created_at %>
+            </p>
+            <hr>
+
+            <p>訂購人：
+              <%= @orderlist.user.name %>
+            </p>
+         <br>
+
+            <% if @orderlist.user.phone.present? %>
+            <p>訂購人電話：
+              <%= @orderlist.user.phone %>
+            </p>
+          <br>
+            <% else %>
+            <% end %>
+
+            <% if @orderlist.user.address.present? %>
+            <p>原送餐地址：
+              <%= @orderlist.user.address %>
+            </p>
+            <br>
+            <% else %>
+             
+            <% end %>
+
+          
+             <% if @orderlist.user.phone.present? %>
+            <p>訂購人聯絡電話：
+              <%= @orderlist.user.phone %>
+            </p>
+            <br>
+            <% else %>
+            <% end %>
+
+
+
+            <p>訂購人EMAIL：
+              <%= @orderlist.user.email %>
+            </p>
+           
+            
+            <% if @orderlist.gift.present? %>
+            <hr>
+              <font size = "3" color= "red">送禮：需先完成付款（包括運費）</font>
+              <br><br>
+            <p>收禮人：
+              <%= @orderlist.gift %>
+            </p>
+            <% else %>
+            <% end %>
+
+            <hr>
+              <center><font color="#5CA5FF" size ="4" face = "Baskerville Old Face">宅配送貨</font></center>
+             
+            <p>收餐人聯絡電話：
+            <%= @orderlist.phone %>
+            </p>
+            
+            <p>新指定送餐地址：
+              <%= @orderlist.address %>
+            </p>
+
+            <p>送餐時間：
+              <%= @orderlist.time %>
+            </p>
+
+
+            <hr>
+            <center><font color="#5CA5FF" size ="4" face = "Baskerville Old Face">Chef29 取貨點取貨</font></center>
+
+            <p>Chef29 取貨點：
+            <%= @orderlist.pickuplocation %>
+            </p>
+
+            <p>收餐人聯絡電話：
+            <%= @orderlist.pickupdates %>
+            </p>
+
+
+            <hr>
+            <center><font color="#5CA5FF" size ="4" face = "Baskerville Old Face">餐點</font></center>
+
+            <p>1號餐：
+              <%= @orderlist.dish1 %>份
+            </p>
+           
+ 
+            <p>2號餐：
+              <%= @orderlist.dish2 %>份
+            </p>
+            
+
+            <p>3號餐：
+              <%= @orderlist.dish3 %>份
+            </p>
+
+             <p>4號餐：
+              <%= @orderlist.dish4 %>份
+            </p>
+           
+ 
+            <p>5號餐：
+              <%= @orderlist.dish5 %>份
+            </p>
+            
+
+            <p>6號餐：
+              <%= @orderlist.dish6 %>份
+            </p>
+
+
+            <hr>
+            <center><font color="#5CA5FF" size ="4" face = "Baskerville Old Face">每週水果箱</font></center>
+
+          <br><br>
+
+            <p>單次水果箱訂購：
+              (<%= @orderlist.week %>)人份水果箱
+            </p>
+
+            <p>連續每週水果箱訂購：
+              連續(<%= @orderlist.month %>)週水果箱
+            </p>
+
+            <hr>
+
+            <% if @orderlist.dish4.present? %>
+            <% if @orderlist.week.present? %>
+            <p>總共購買了：
+            <%= (@orderlist.dish1 + @orderlist.dish2 + @orderlist.dish3 + @orderlist.dish4 + @orderlist.dish5 + @orderlist.dish6 + @orderlist.week + @orderlist.month) %>份餐點(水果箱)
+
+             </p>
+           
+            <% else %>
+ <p>總共購買了：
+            <%= (@orderlist.dish1 + @orderlist.dish2 + @orderlist.dish3 + @orderlist.dish4 + @orderlist.dish5 + @orderlist.dish6 ) %>份餐點(水果箱)
+             </p>
+            <% end %>
+  
+            </p>
+          
+            <% else %>
+            <p>總共購買了：
+            <%= (@orderlist.dish1 + @orderlist.dish2 + @orderlist.dish3 ) %>份餐點（水果箱）
+            </p>
+            <% end %>
+
+             <p>付款方式：
+              <%= @orderlist.paylater %>
+            </p>
+
+             <p>備註：
+              <%= @orderlist.detail %>
+            </p>
+            
+            <hr>
+
+
+
+            <p> 餐點 + 水果箱（未加運費）＄
+            
+            <%= ((@orderlist.dish4 + @orderlist.dish5 + @orderlist.dish6+@orderlist.dish1 + @orderlist.dish2 + @orderlist.dish3) *299)+(( @orderlist.week+ @orderlist.month) *399)%>  
+
+            <%= link_to'您願意參加愛心鏈活動，多付一餐 ＄299 送給下個訂餐的客人當禮物嗎？-點入看更多', 'http://www.chef29.com/pins/420-starbucks-paying-it-forward'%></p>
+
+
+            <font size = "2" color= "red">新會員第一份$299餐點免費：若您第一次溝買，請在以上購買金額扣除＄299。（＄299以外特別餐點不能使用）</font>
+<br>
+          <br>
+        
+            <br>
+            <p>＊免費餐點密碼：
+              <%= @orderlist.discount %>
+            </p>
+
+            <hr>
+            <font size = "3" color= "red">以下請您在完成餐點付款後再回來填入（查看訂單 > 訂單細節 > 修改訂單)</font>
+<br><br>
+            <p>匯款/轉帳（帳號末5碼）：
+              <%= @orderlist.account %>
+            </p>
+
+            <p>匯款/轉帳金額：
+              <%= @orderlist.wireamount %>
+            </p>
+
+            <p>匯款/轉帳日期：$
+              <%= @orderlist.re %>
+            </p>
+
+            <hr>
+            <p>
+            付款帳號(匯款/轉帳）: 迪士洛普有限公司
+            <br>
+            兆豐國際商業銀行(017)（大安分行）
+            帳號： 229-09-03502-2
+            </p>
+            <br>
+            <br>
+
+<head>
+  <script type="text/javascript">
+var fb_param = {};
+fb_param.pixel_id = '6009594778928';
+fb_param.value = '0.00';
+fb_param.currency = 'TWD';
+(function(){
+  var fpw = document.createElement('script');
+  fpw.async = true;
+  fpw.src = '//connect.facebook.net/en_US/fp.js';
+  var ref = document.getElementsByTagName('script')[0];
+  ref.parentNode.insertBefore(fpw, ref);
+})();
+</script>
+<noscript><img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/offsite_event.php?id=6009594778928&amp;value=0&amp;currency=TWD" /></noscript>
+</head>
+
+
+            <% if current_user == @orderlist.user %>
+                <%= link_to '(填寫付款完資料／帳號／金額...)', edit_orderlist_path(@orderlist) %> |
+            <% end %>
+            <%= link_to '上一頁', orderlists_path %>
+        </div>
+    </div>
+</div>
+
+
+<center><img src="https://farm4.staticflickr.com/3713/14084136049_5d3db85aeb_o.jpg" width="1016" height="800" alt="10572560456_23439626d9_o"></center>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44036574-1', 'chef29.com');
+  ga('send', 'pageview');
+
+</script>

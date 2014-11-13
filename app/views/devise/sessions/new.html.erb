@@ -1,0 +1,38 @@
+<br><br>
+<center>
+   <font color="gray" size ="6" face = "Baskerville Old Face">吃的更美味，更健康。</font>
+          
+  </center>
+  <br><br><br><br>
+
+<div class="row-fluid">
+  <div class="span3" >
+
+<font color="gray" size ="5" face = "Baskerville Old Face">登入</font>
+<br><br>
+
+<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, :required => false, :autofocus => true %>
+    <%= f.input :password, :required => false %>
+    <%= f.input :remember_me, :as => :boolean if devise_mapping.rememberable? %>
+  </div>
+</div>
+           
+  <div class="span8"  ><center>
+ <a href="http://www.chef29.com/users/sign_up" ><img src="http://farm4.staticflickr.com/3820/11702697496_020eeb86e9_o.png" width="1102" height="508" alt="fee3"></a></center>
+</div>
+</div>
+
+ <div class="form-actions">
+    <%= f.button :submit, "登入" %>
+  </div>
+
+<% end %>
+<br>
+<%= render "devise/shared/links" %>
+</div>
+</div>
+
+
+

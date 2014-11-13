@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<center>
+<% if user_signed_in? %>
+ <div class="page-header">
+   
+<center>
+<div class="row-fluid">
+  
+  <div class="span3"  >
+  <center>
+    
+   <a href="http://www.chef29.com/users/sign_up" ><img src="https://farm3.staticflickr.com/2830/13400108224_ede3d928a7.jpg" width="225" height="250" alt="jointoday"></a>
+
+  </center>
+  </div> 
+
+
+
+  <div class="span3">
+    <center>
+      <a href="http://www.chef29.com/onmenu" ><img src="https://farm4.staticflickr.com/3782/13399873843_4180194a3e.jpg" width="225" height="250" alt="Menu"></a> 
+    </center>
+  </div> 
+
+
+  <div class="span3">
+  <center>
+   <a href="http://www.chef29.com/how"><img src="https://farm8.staticflickr.com/7279/13400107704_bb215ac8c6.jpg" width="225" height="301" alt="howtobuy"></a>
+   </center>
+  </div>
+
+
+
+  <div class="span3">
+    <center>
+     <a href="http://www.chef29.com/orderpage" ><img src="https://farm4.staticflickr.com/3798/13399751675_49fea54123.jpg" width="225" height="380" alt="kart"></a>
+    </center>
+  </div>
+
+</div>
+
+</center>
+
+
+<% else %>
+ 
+<br><br>
+
+ <font color="gray" size ="6" face = "Baskerville Old Face">Chef29至今已捐出<font color="#5CA5FF" size ="8" face = "Baskerville Old Face"> 2480 </font>多份餐點</font>
+ 
+<br><br>
+
+<% end %>
+
+  </font>
+</center>
+
+<% unless user_signed_in? %>
+<head>
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript" src="http://s.sharethis.com/loader.js"></script>
+
+<% content_for :head do %>
+    <meta property="fb:app_id"          content="479820998782220" /> 
+    <meta property="og:type"            content="website" /> 
+    <meta property="og:url"             content="http://www.chef29.com" /> 
+    <meta property="og:title"           content="Chef29 今晚大廚 - 有意義的精緻美食 Fine Dining With A Purpose" />
+    <meta property="og:description"     content="我們為您準備食譜與食材，送到府上29分內讓您成為今晚大廚，同時（買1給1）作公益。每當您購買一份餐，我們會透過慈善機構給出1份餐或同1份餐的金額來幫助貧困兒童。 若您認同（買1給1）的公益概念是在作有意義的事，請協助我們將Chef29 的服務分享給您的朋友，告訴他們購買的第一份餐點是免費的。 " /> 
+    <meta property="og:image"           content="http://farm8.staticflickr.com/7446/10771490106_011d208073_o.jpg" /> 
+<% end %>
+
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
+    <%= tag :meta, name: "viewport", content: "width=device-width, initial-scale=1.0" %>
+
+</head>
+
+<body>
+
+<div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/zh_TW/all.js#xfbml=1&appId=479820998782220";
+    fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+
+<br><br>
+          
+
+<div id="myCarousel" class="carousel slide">
+  <ol class="carousel-indicators">
+ 
+  </ol>
+  <!-- Carousel items -->
+
+  <div class="carousel-inner">
+  <div class="active item"><a href="http://www.chef29.com/users/sign_up" ><img src="https://farm8.staticflickr.com/7086/13438655894_4666a3e36f_h.jpg" width="1451" height="450" alt="what1"></a></div>
+
+  <div class="item"><a href="http://www.chef29.com/give" ><img src="https://farm6.staticflickr.com/5526/13417896943_7556322bbe_h.jpg" width="1450" height="450" alt="buy1d1"></a></div>
+
+
+  <div class="item"><a href="http://www.chef29.com/menu"><img src="https://farm4.staticflickr.com/3701/13441039683_fec91e3923_h.jpg" width="1454" height="450" alt="salad"></a></div>
+
+   <div class="item"><a href="http://www.chef29.com/hoc"><img src="https://farm3.staticflickr.com/2933/13483881023_b5f58cbe32_h.jpg" width="1400" height="300" alt="cooking"></a></div>
+
+
+
+  <div class="item"><a href="http://www.chef29.com/know" title="Flickr 上 mattwusta 的 ing1"><img src="https://farm8.staticflickr.com/7382/13490387064_5faf30b1a2_b.jpg" width="1454" height="450" alt="ing1"></a></div>
+
+   <div class="item"><a href="http://www.chef29.com/fruit"><img src="https://farm3.staticflickr.com/2895/14014561512_a5afeaea1a_b.jpg" width="1400" height="300" alt="cooking"></a></div>
+
+  <div class="item"><a href="http://www.chef29.com/delivery"><img src="https://farm8.staticflickr.com/7309/13458426285_835de634d1_h.jpg" width="1400" height="300" alt="cooking"></a></div>
+
+  <div class="item"><a href="http://www.chef29.com/how" ><img src="http://farm4.staticflickr.com/3761/9730599510_a74ae4585d_o.png" width="1400" height="300" alt="Bonappetite"></a></div>
+  </div>
+  <!-- Carousel nav -->
+ 
+  <div style="padding:20px;">
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
+</div>
+
+    </div>
+  <% end %>
+</body>
+<% if user_signed_in? %>
+
+<% else %>
+
+
+<br><br>
+
+
+
+<a href="http://www.chef29.com/give#sthash.TwAIvtxm.dpbs" ><img src="https://farm3.staticflickr.com/2920/14219531216_c132702470_o.jpg" width="1400" height="500" alt="what1"></a>
+
+<br><br><br><br><br>
+
+
+<div class="row-fluid">
+
+  <center>
+        <div class="span6"  >
+          <a href="http://www.chef29.com/categories/7" ><img src="https://farm6.staticflickr.com/5035/13438287055_7e3d5cc66b_z.jpg" width="500" height="500" alt="what1"></a>
+
+        </div>
+  </center>
+
+<div class="span6"> 
+
+     <center>  <div class="flex-vimeo1 widescreen"><iframe src="//player.vimeo.com/video/93144667?byline=0" width="400" height="225" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></center>
+       
+    
+    <center>
+<font color="#5CA5FF" size ="3" ><%= link_to "看更多 《主廚之家》影音料理教學影片 >", chef29tv_path %>
+    </font></center>
+               
+            </div>
+
+          </div>
+
+<br><br><br><br>
+
+
+<center>
+<div class="row-fluid">
+  
+  <div class="span3"  >
+    <center>
+    
+   <a href="http://www.chef29.com/users/sign_up" ><img src="https://farm3.staticflickr.com/2830/13400108224_ede3d928a7.jpg" width="225" height="250" alt="jointoday"></a>
+
+  </center>
+</div> 
+
+  <div class="span3">
+    <center>
+ <a href="http://www.chef29.com/onmenu" ><img src="https://farm4.staticflickr.com/3782/13399873843_4180194a3e.jpg" width="225" height="250" alt="Menu"></a> 
+</center>
+  </div> 
+
+
+  <div class="span3">
+  <center>
+<a href="http://www.chef29.com/how"><img src="https://farm8.staticflickr.com/7279/13400107704_bb215ac8c6.jpg" width="225" height="301" alt="howtobuy"></a>
+
+</center>
+  </div>
+
+   <div class="span3"><center>
+  <a href="http://www.chef29.com/orderpage" ><img src="https://farm4.staticflickr.com/3798/13399751675_49fea54123.jpg" width="225" height="380" alt="kart"></a>
+</center>
+
+  </div>
+
+</div>
+
+</center>
+
+<br>
+<hr>
+
+<% end %>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44036574-1', 'chef29.com');
+  ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">stLight.options({publisher: "3d6bd212-1a1c-4bf7-9f1c-7154d13f873d", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script>
+var options={ "publisher": "3d6bd212-1a1c-4bf7-9f1c-7154d13f873d", "position": "left", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["facebook", "twitter", "linkedin", "googleplus", "pinterest", "baidu", "email", "blogger"]}};
+var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script>
+</html>
